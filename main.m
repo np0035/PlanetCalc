@@ -41,8 +41,8 @@ x = squeeze(positions(1,:,:)).';
 y = squeeze(positions(2,:,:)).';
 
 % Export CSV files
-writematrix(x,'x-positions.csv');
-writematrix(y,'y-positions.csv');
+%writematrix(x,'x-positions.csv');
+%writematrix(y,'y-positions.csv');
 
 % Plot data
 plot(x,y)
