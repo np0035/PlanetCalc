@@ -12,20 +12,21 @@ while isChoosing
     fprintf('1) Create a new system\n')
     fprintf('2) Load a saved system\n')
     fprintf('3) Run simulation of loaded system\n')
-    user_choice = input('Select an option: \n');
+    user_choice = input('Select an option. Input "0" to exit. \n');
     
     switch user_choice
         case 0
             return
         case 1
-            % create system
+            planets = create_system();
         case 2
             % load a saved system
         case 3
             % break out of loop and run simulation
             isChoosing = false;
         otherwise
-            % circle back?
+            % circle back
+            fprintf('Please choose one of the options above.\n')
     end
 end
 
