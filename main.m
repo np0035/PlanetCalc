@@ -1,0 +1,35 @@
+clear all;
+clc;
+
+% Set up system
+fprintf('Building universe...\n');
+planets(1) = create_planet([0 0], [0 0], 10);
+planets(2) = create_planet([10 20], [3 0], 1);
+
+% Set universe parameters
+G = 0.5;
+precision = 0.01;
+steps = 10000;
+
+fprintf(['Simulation started: %d planet trajectories extrapolated over' ...
+    '%d timesteps\n'])
+tic();
+
+% Begin simulation
+positions = driver(planets, G, precision, steps);
+
+fprintf('%d planet trajectories extrapolated over %d timesteps.\n', ...
+    length(planets), steps);
+fprintf('Elapsed time: %f sec\n', toc());
+
+x1 = squeeze(positions(1,1,:));
+y1 = squeeze(positions(2,1,:));
+x2 = squeeze(positions(1,2,:));
+y2 = squeeze(positions(2,2,:));
+
+x = squeeze(positions(1,:,:)).';
+y = squeeze(positions(2,:,:)).';
+
+writematrix(x,'x-positions.csv');
+writematrix(y,'y-positions.csv');
+plot(x,y)
