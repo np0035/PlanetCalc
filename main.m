@@ -22,14 +22,10 @@ fprintf('%d planet trajectories extrapolated over %d timesteps.\n', ...
     length(planets), steps);
 fprintf('Elapsed time: %f sec\n', toc());
 
-x1 = squeeze(positions(1,1,:));
-y1 = squeeze(positions(2,1,:));
-x2 = squeeze(positions(1,2,:));
-y2 = squeeze(positions(2,2,:));
-
 x = squeeze(positions(1,:,:)).';
 y = squeeze(positions(2,:,:)).';
 
 writematrix(x,'x-positions.csv');
 writematrix(y,'y-positions.csv');
+
 plot(x,y)
