@@ -13,6 +13,12 @@ function result = driver(planets, G, precision, steps)
         for j = 1:length(planets_1)
             positions(:,j,i) = planets_1(j).pos;
         end
+
+        progress_0 = (i-1)/steps*100;
+        progress_1 = i/steps*100;
+        if (floor(progress_0/5) ~= floor(progress_1/5))
+            fprintf('Progress: %.0f%c\n', progress_1, char(37));
+        end
     end
     result = positions;
 end
