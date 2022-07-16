@@ -20,7 +20,7 @@ function planets = step(planets, G, precision)
 
     for p = 1:length(planets)
         planets(p).acc = planets(p).current_force ./ planets(p).mass;
-        planets(p).vel = planets(p).vel + planets(p).acc;
+        planets(p).vel = planets(p).vel + ((planets(p).acc) * precision);
         planets(p).pos = planets(p).pos + ((planets(p).vel) .* precision);
     end
 end

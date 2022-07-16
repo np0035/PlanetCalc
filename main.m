@@ -8,15 +8,16 @@ fprintf('***************************************************\n\n');
 % Set up system
 fprintf('Building universe...\n');
 planets(1) = create_planet([0 0], [0 0], 10);
-planets(2) = create_planet([10 20], [3 0], 1);
+planets(2) = create_planet([10 20], [1 0], 1);
 
 % Set universe parameters
-G = 0.5;
+G = 5;
 precision = 0.01;
-steps = 10000;
+time = 400;
+steps = time/precision;
 
-fprintf(['Simulation started: %d planet trajectories extrapolated over' ...
-    '%d timesteps\n'])
+fprintf('Simulation started\n');
+
 tic();
 
 % Begin simulation
