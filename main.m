@@ -7,14 +7,16 @@ fprintf('***************************************************\n\n');
 
 % Set up system
 fprintf('Building universe...\n');
-planets(1) = create_planet([0 0], [0 0], 20);
-planets(2) = create_planet([10 20], [1 0], 1);
+planets(1) = create_planet([0 0], [0 -0.5], 20);
+planets(2) = create_planet([1 0], [0 10], 1);
+planets(3) = create_planet([0.90 0], [0 3], 0.01);
 
 % Set universe parameters
 G = 5;
-precision = 0.01;
-time = 400;
+precision = 0.0001;
+time = 2;
 steps = time/precision;
+animation_speed = 5;
 
 fprintf('Simulation started\n');
 
@@ -38,11 +40,12 @@ writematrix(y,'y-positions.csv');
 
 % Plot data
 plot(x,y)
+axis equal
 hold on
 marker = plot(x(1,:),y(1,:), 'o','MarkerFaceColor','red');
 hold off
 
-for i = 2:length(x)
+for i = 2:animation_speed:length(x)
     marker.XData = x(i,:);
     marker.YData = y(i,:);
     drawnow
