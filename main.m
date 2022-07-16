@@ -11,11 +11,11 @@ fprintf('Choose an option:\n')
 fprintf('1) Create a new system\n')
 fprintf('2) Load a saved system\n')
 
-% Set up system
-fprintf('Building universe...\n');
-planets(1) = create_planet([0 0], [0 -0.5], 20);
-planets(2) = create_planet([1 0], [0 10], 1);
-planets(3) = create_planet([0.90 0], [0 3], 0.01);
+% % Set up system
+% fprintf('Building universe...\n');
+% planets(1) = create_planet([0 0], [0 -0.5], 20);
+% planets(2) = create_planet([1 0], [0 10], 1);
+% planets(3) = create_planet([0.90 0], [0 3], 0.01);
 
 % Set universe parameters
 G = 5;
