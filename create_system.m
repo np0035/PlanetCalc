@@ -20,14 +20,14 @@ function planets = create_system()
         % Prompt for name and test for exit value
         name_prompt = sprintf('\nPlanet %d name: ', num_planets+1);
         name = input(name_prompt,"s");
-        if (strcmp(name,"\"))
+        if (strcmp(name,'/'))
             break
         end
         
         % Prompt for other vars
         pos = input('\nInitial position: ');
         vel = input('\nInitial velocity: ');
-        mass = input('\nPlanet mass: ')
+        mass = input('\nPlanet mass: ');
 
         num_planets = num_planets + 1;
 
@@ -37,8 +37,9 @@ function planets = create_system()
         end
     end
 
+    % Add planet to the list
     for i = 1:num_planets
-        create_planet(name,pos,vel,mass);
+        planets(i) = create_planet(name,pos,vel,mass);
     end
 end
 

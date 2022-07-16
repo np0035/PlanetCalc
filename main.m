@@ -32,9 +32,9 @@ end
 
 % % Set up system
 % fprintf('Building universe...\n');
-% planets(1) = create_planet([0 0], [0 -0.5], 20);
-% planets(2) = create_planet([1 0], [0 10], 1);
-% planets(3) = create_planet([0.90 0], [0 3], 0.01);
+% planets(1) = create_planet('Sun', [0 0], [0 -0.5], 20);
+% planets(2) = create_planet('Earth', [1 0], [0 10], 1);
+% planets(3) = create_planet('Moon', [0.90 0], [0 3], 0.01);
 
 % Set universe parameters
 G = 5;
@@ -56,8 +56,14 @@ fprintf('%d planet trajectories extrapolated over %d timesteps.\n', ...
 fprintf('Elapsed time: %f sec\n', toc());
 
 % Transform position data into plottable matrices
+
 x = squeeze(positions(1,:,:)).';
 y = squeeze(positions(2,:,:)).';
+
+if length(planets) <= 1
+    x = x.';
+    y = y.';
+end
 
 % Export CSV files
 %writematrix(x,'x-positions.csv');
@@ -70,7 +76,7 @@ hold on
 marker = plot(x(1,:),y(1,:), 'o','MarkerFaceColor','red');
 hold off
 
-for i = 2:animation_speed:length(x)
+for i = 1:animation_speed:length(x)
     marker.XData = x(i,:);
     marker.YData = y(i,:);
     drawnow
