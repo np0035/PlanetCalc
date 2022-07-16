@@ -20,7 +20,8 @@ while isChoosing
         case 1
             planets = create_system();
         case 2
-            % load a saved system
+            planets_struct = load_system();
+            planets = planets_struct.planets;
         case 3
             % break out of loop and run simulation
             isChoosing = false;

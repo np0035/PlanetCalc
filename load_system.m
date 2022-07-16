@@ -19,13 +19,13 @@ function planets = load_system()
         end
     
         %% Allow the user to choose a system
-        user_choice = input(['Type the name of ' ...
+        user_choice = input(['\nType the name of ' ...
             'one of the systems to load it, or type 0 to cancel: '],"s");
         planets = [];
     
         try
             planets = load(fullfile('saved_systems',user_choice));
-            fprintf('%s loaded\n', user_choice)
+            fprintf('%s loaded\n\n', user_choice)
             return
         catch
             if strcmp('0',user_choice)
