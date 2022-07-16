@@ -36,5 +36,9 @@ function planets = create_system()
             break
         end
     end
+
+    for i = 1:num_planets
+        create_planet(name,pos,vel,mass);
+    end
 end
 
