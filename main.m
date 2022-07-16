@@ -6,10 +6,28 @@ fprintf('**************************************************\n')
 fprintf('ORBITAL MOTION CALCULATOR\nCopyright 2022 by Nicholas Pittman\n')
 fprintf('***************************************************\n\n')
 
-% Show main menu
-fprintf('Choose an option:\n')
-fprintf('1) Create a new system\n')
-fprintf('2) Load a saved system\n')
+% Show main menu & collect user input
+isChoosing = true;
+while isChoosing
+    fprintf('1) Create a new system\n')
+    fprintf('2) Load a saved system\n')
+    fprintf('3) Run simulation of loaded system\n')
+    user_choice = input('Select an option: \n');
+    
+    switch user_choice
+        case 0
+            return
+        case 1
+            % create system
+        case 2
+            % load a saved system
+        case 3
+            % break out of loop and run simulation
+            isChoosing = false;
+        otherwise
+            % circle back?
+    end
+end
 
 % % Set up system
 % fprintf('Building universe...\n');
