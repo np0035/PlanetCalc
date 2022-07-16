@@ -14,6 +14,7 @@ function result = driver(planets, G, precision, steps)
             positions(:,j,i) = planets_1(j).pos;
         end
 
+        % Note progress every so often
         progress_0 = (i-1)/steps*100;
         progress_1 = i/steps*100;
         if (floor(progress_0/5) ~= floor(progress_1/5))

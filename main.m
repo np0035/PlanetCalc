@@ -1,9 +1,15 @@
 clear all;
 clc;
 
-fprintf('**************************************************\n');
-fprintf('ORBITAL MOTION CALCULATOR\nCopyright 2022 by Nicholas Pittman\n');
-fprintf('***************************************************\n\n');
+% Display header
+fprintf('**************************************************\n')
+fprintf('ORBITAL MOTION CALCULATOR\nCopyright 2022 by Nicholas Pittman\n')
+fprintf('***************************************************\n\n')
+
+% Show main menu
+fprintf('Choose an option:\n')
+fprintf('1) Create a new system\n')
+fprintf('2) Load a saved system\n')
 
 % Set up system
 fprintf('Building universe...\n');
