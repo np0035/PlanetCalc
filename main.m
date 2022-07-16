@@ -1,6 +1,10 @@
 clear all;
 clc;
 
+fprintf('**************************************************\n');
+fprintf('ORBITAL MOTION CALCULATOR\nCopyright 2022 by Nicholas Pittman\n');
+fprintf('***************************************************\n\n');
+
 % Set up system
 fprintf('Building universe...\n');
 planets(1) = create_planet([0 0], [0 0], 10);
