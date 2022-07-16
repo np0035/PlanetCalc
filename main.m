@@ -7,7 +7,7 @@ fprintf('***************************************************\n\n');
 
 % Set up system
 fprintf('Building universe...\n');
-planets(1) = create_planet([0 0], [0 0], 10);
+planets(1) = create_planet([0 0], [0 0], 20);
 planets(2) = create_planet([10 20], [1 0], 1);
 
 % Set universe parameters
@@ -38,3 +38,12 @@ writematrix(y,'y-positions.csv');
 
 % Plot data
 plot(x,y)
+hold on
+marker = plot(x(1,:),y(1,:), 'o','MarkerFaceColor','red');
+hold off
+
+for i = 2:length(x)
+    marker.XData = x(i,:);
+    marker.YData = y(i,:);
+    drawnow
+end
