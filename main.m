@@ -22,7 +22,7 @@ while isChoosing
     fprintf('1) Create a new system\n')
     fprintf('2) Load a saved system\n')
     fprintf('3) Run simulation of loaded system\n')
-    fprintf('4) Edit simulation parameters')
+    fprintf('4) Edit simulation parameters\n')
     user_choice = input('Select an option. Input "0" to exit. \n');
     
     switch user_choice
