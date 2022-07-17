@@ -41,4 +41,7 @@ function planets = edit_system(pls)
             fprintf('%s not found in the current system.', edit_name);
         end
     end
+    planets = pls;
+
+    % Return planets
 end
