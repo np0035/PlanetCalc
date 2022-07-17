@@ -19,7 +19,7 @@ function planets = edit_system(pls)
         if strcmp(edit_name, '0')
             system_name_ = input(['\nNew system name (type old name to' ...
                 ' overwrite): '],"s");
-            save(fullfile('saved_systems',system_name_));
+            save(fullfile('saved_systems',system_name_), 'planets');
             system_dir = fullfile(pwd,'saved_systems/');
             fprintf('\n%s saved to %s and will be loaded automatically.\n', ...
                 system_name_, system_dir);
@@ -41,8 +41,8 @@ function planets = edit_system(pls)
         if (~is_planet_found)
             fprintf('%s not found in the current system.', edit_name);
         end
+        planets = pls;
     end
-    planets = pls;
 
     % Return planets
 end
