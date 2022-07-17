@@ -14,8 +14,14 @@ function planets = edit_system(pls)
         edit_name = input(['Type the name of the planet to edit, or type ' ...
             '"0" to save the new system: '],"s");
 
-        % Stop editing if user types 0
+        % Stop editing if user types 0, and save the system
         if strcmp(edit_name, '0')
+            system_name_ = input(['\nNew system name (type old name to' ...
+                ' overwrite): '],"s");
+            save(fullfile('saved_systems',system_name_));
+            system_dir = fullfile(pwd,'saved_systems/');
+            fprintf('\n%s saved to %s and will be loaded automatically.\n', ...
+                system_name_, system_dir);
             break
         end
 
