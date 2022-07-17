@@ -14,6 +14,7 @@ fprintf('***************************************************\n\n')
 % animation_speed = 5;
 
 % Load universe - appears as "universe" in workspace
+fprintf('Loading universe...\n');
 load('universe.mat')
 
 % Show main menu & collect user input
@@ -50,12 +51,11 @@ while isChoosing
 end
 
 % % Set up system
-fprintf('Building universe...\n');
 % planets(1) = create_planet('Sun', [0 0], [0 -0.5], 20);
 % planets(2) = create_planet('Earth', [1 0], [0 10], 1);
 % planets(3) = create_planet('Moon', [0.90 0], [0 3], 0.01);
 
-fprintf('Simulation started\n');
+fprintf('----------------\nSIMULATION STARTED\n----------------\n');
 
 tic();
 
@@ -88,7 +88,11 @@ hold on
 marker = plot(x(1,:),y(1,:), 'o','MarkerFaceColor','red');
 hold off
 
+set(gcf, 'CurrentCharacter', '}')
 for i = 1:universe.animation_speed:length(x)
+    if get(gcf, 'CurrentCharacter') ~= ('}')
+        break
+    end
     marker.XData = x(i,:);
     marker.YData = y(i,:);
     drawnow
