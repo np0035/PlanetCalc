@@ -6,12 +6,20 @@ fprintf('**************************************************\n')
 fprintf('ORBITAL MOTION CALCULATOR\nCopyright 2022 by Nicholas Pittman\n')
 fprintf('***************************************************\n\n')
 
+% Set universe parameters
+G = 5;
+precision = 0.0001;
+time = 2;
+steps = time/precision;
+animation_speed = 5;
+
 % Show main menu & collect user input
 isChoosing = true;
 while isChoosing
     fprintf('1) Create a new system\n')
     fprintf('2) Load a saved system\n')
     fprintf('3) Run simulation of loaded system\n')
+    fprintf('4) Edit simulation parameters')
     user_choice = input('Select an option. Input "0" to exit. \n');
     
     switch user_choice
@@ -25,6 +33,8 @@ while isChoosing
         case 3
             % break out of loop and run simulation
             isChoosing = false;
+        case 4
+            edit_sim(time, precision, animation_speed);
         otherwise
             % circle back
             fprintf('Please choose one of the options above.\n')
@@ -36,13 +46,6 @@ fprintf('Building universe...\n');
 % planets(1) = create_planet('Sun', [0 0], [0 -0.5], 20);
 % planets(2) = create_planet('Earth', [1 0], [0 10], 1);
 % planets(3) = create_planet('Moon', [0.90 0], [0 3], 0.01);
-
-% Set universe parameters
-G = 5;
-precision = 0.0001;
-time = 2;
-steps = time/precision;
-animation_speed = 5;
 
 fprintf('Simulation started\n');
 
