@@ -35,11 +35,9 @@ function planets = create_system()
         if (num_planets > 10)
             break
         end
-    end
 
-    % Add planet to the list
-    for i = 1:num_planets
-        planets(i) = create_planet(name,pos,vel,mass);
+        % Add planet to the list
+        planets(num_planets) = create_planet(name,pos,vel,mass);
     end
 end
 
