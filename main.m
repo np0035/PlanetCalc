@@ -22,7 +22,8 @@ while isChoosing
     fprintf('1) Create a new system\n')
     fprintf('2) Load a saved system\n')
     fprintf('3) Run simulation of loaded system\n')
-    fprintf('4) Edit simulation parameters\n')
+    fprintf('4) Edit loaded system\n')
+    fprintf('5) Edit simulation parameters\n')
     user_choice = input('Select an option. Input "0" to exit. \n');
     
     switch user_choice
@@ -37,6 +38,8 @@ while isChoosing
             % break out of loop and run simulation
             isChoosing = false;
         case 4
+            planets = edit_system(planets);
+        case 5
             universe = edit_sim(universe);
             save('universe.mat', 'universe');
             fprintf('New parameters saved.\n');
