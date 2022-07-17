@@ -39,5 +39,9 @@ function planets = create_system()
         % Add planet to the list
         planets(num_planets) = create_planet(name,pos,vel,mass);
     end
+    system_name = input('\nName your new system: ');
+    save(fullfile('saved_systems',system_name));
+    system_dir = fullfile(pwd,'saved_systems');
+    fprintf('\n%s saved to %s\n', system_name, system_dir);
 end
 
