@@ -17,6 +17,7 @@ function universe = edit_sim(u)
     universe.time = input('Total simulation time = ');
     universe.animation_speed = input( ...
         'Animation speed (steps per frame) = ');
+    universe.steps = 0; % Initialize this variable
 
     % Restore default values in special case
     param_names = fieldnames(u);
