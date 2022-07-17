@@ -32,7 +32,7 @@ while isChoosing
 end
 
 % % Set up system
-% fprintf('Building universe...\n');
+fprintf('Building universe...\n');
 % planets(1) = create_planet('Sun', [0 0], [0 -0.5], 20);
 % planets(2) = create_planet('Earth', [1 0], [0 10], 1);
 % planets(3) = create_planet('Moon', [0.90 0], [0 3], 0.01);
