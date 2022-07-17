@@ -8,7 +8,7 @@ function universe = edit_sim(u)
     fprintf('Precision (dt) = %f\n', u.precision)
     fprintf('Total simulation time = %f\n', u.time);
     fprintf('Animation speed (steps per frame) = %d\n', u.animation_speed);
-    fprintf('----------------------------------------')
+    fprintf('----------------------------------------\n')
     fprintf('Input new parameters, or type "0" to keep original value.\n');
 
     % Allow user to input new parameters
