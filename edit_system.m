@@ -1,4 +1,5 @@
 function planets = edit_system(pls)
+    % This function allows the user to edit an existing system of planets.
     while(1)
 
         % Display current system
