@@ -42,7 +42,7 @@ function planets = create_system()
 
     % Allow user to name the system
     system_name_ = input('\nName your new system: ',"s");
-    save(fullfile('saved_systems',system_name_));
+    save(fullfile('saved_systems',system_name_), 'planets');
     system_dir = fullfile(pwd,'saved_systems/');
     fprintf('\n%s saved to %s and will be loaded automatically.\n', ...
         system_name_, system_dir);
