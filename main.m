@@ -7,11 +7,11 @@ fprintf('ORBITAL MOTION CALCULATOR\nCopyright 2022 by Nicholas Pittman\n')
 fprintf('***************************************************\n\n')
 
 % Set universe parameters
-G = 5;
-precision = 0.0001;
-time = 2;
-steps = time/precision;
-animation_speed = 5;
+% G = 5;
+% precision = 0.0001;
+% time = 2;
+% steps = time/precision;
+% animation_speed = 5;
 
 % Show main menu & collect user input
 isChoosing = true;
@@ -34,7 +34,7 @@ while isChoosing
             % break out of loop and run simulation
             isChoosing = false;
         case 4
-            edit_sim(time, precision, animation_speed);
+            edit_sim();
         otherwise
             % circle back
             fprintf('Please choose one of the options above.\n')
