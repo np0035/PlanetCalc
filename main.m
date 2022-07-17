@@ -39,6 +39,7 @@ while isChoosing
         case 4
             universe = edit_sim(universe);
             save('universe.mat', 'universe');
+            fprintf('New parameters saved.\n');
         otherwise
             % circle back
             fprintf('Please choose one of the options above.\n')
