@@ -1,4 +1,4 @@
-function force = get_force(p1, p2, G)
+function force = get_force(universe, p1, p2)
     % Calculates the force due to gravity acting on each planet.
     %
     % Inputs:
@@ -17,7 +17,7 @@ function force = get_force(p1, p2, G)
     dir = [(p2.pos(1) - p1.pos(1)) (p2.pos(2) - p1.pos(2))] ./ r;
 
     % Get magnitude of force
-    force_mag = G*p1.mass*p2.mass / r^2;
+    force_mag = universe.G*p1.mass*p2.mass / r^2;
 
     % Give the force a direction
     force = dir .* force_mag;

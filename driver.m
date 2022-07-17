@@ -1,13 +1,13 @@
-function result = driver(planets, G, precision, steps)
+function result = driver(universe, planets)
 
     % Generate empty array of positions
-    positions = zeros(2,length(planets),steps);
+    positions = zeros(2,length(planets),universe.steps);
 
     planets_1 = planets;
 
-    for i = 1:steps
+    for i = 1:universe.steps
         % Simulate motion
-        planets_1 = step(planets_1, G, precision);
+        planets_1 = step(universe, planets_1);
 
         % Add new position entry
         for j = 1:length(planets_1)
@@ -15,8 +15,8 @@ function result = driver(planets, G, precision, steps)
         end
 
         % Note progress every so often
-        progress_0 = (i-1)/steps*100;
-        progress_1 = i/steps*100;
+        progress_0 = (i-1)/universe.steps*100;
+        progress_1 = i/universe.steps*100;
         if (floor(progress_0/5) ~= floor(progress_1/5))
             fprintf('Progress: %.0f%c\n', progress_1, char(37));
         end

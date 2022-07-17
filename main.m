@@ -13,6 +13,9 @@ fprintf('***************************************************\n\n')
 % steps = time/precision;
 % animation_speed = 5;
 
+% Load universe - appears as "universe" in workspace
+load('universe.mat')
+
 % Show main menu & collect user input
 isChoosing = true;
 while isChoosing
@@ -34,7 +37,8 @@ while isChoosing
             % break out of loop and run simulation
             isChoosing = false;
         case 4
-            edit_sim();
+            universe = edit_sim(universe);
+            save('universe.mat', 'universe');
         otherwise
             % circle back
             fprintf('Please choose one of the options above.\n')
@@ -52,11 +56,11 @@ fprintf('Simulation started\n');
 tic();
 
 % Begin simulation
-positions = driver(planets, G, precision, steps);
+positions = driver(universe, planets);
 
 % Display stats
 fprintf('%d planet trajectories extrapolated over %d timesteps.\n', ...
-    length(planets), steps);
+    length(planets), universe.steps);
 fprintf('Elapsed time: %f sec\n', toc());
 
 % Transform position data into plottable matrices
@@ -80,7 +84,7 @@ hold on
 marker = plot(x(1,:),y(1,:), 'o','MarkerFaceColor','red');
 hold off
 
-for i = 1:animation_speed:length(x)
+for i = 1:universe.animation_speed:length(x)
     marker.XData = x(i,:);
     marker.YData = y(i,:);
     drawnow

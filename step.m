@@ -1,4 +1,4 @@
-function planets = step(planets, G, precision)
+function planets = step(universe, planets)
     for p = 1:length(planets)
         % Reset force vector
         planets(p).current_force = [0,0];
@@ -13,14 +13,14 @@ function planets = step(planets, G, precision)
 
                 % Get force between planets
                 planets(p1).current_force = planets(p1).current_force ...
-                    + get_force(planets(p1),planets(p2),G);
+                    + get_force(universe, planets(p1), planets(p2));
             end
         end
     end
 
     for p = 1:length(planets)
         planets(p).acc = planets(p).current_force ./ planets(p).mass;
-        planets(p).vel = planets(p).vel + ((planets(p).acc) * precision);
-        planets(p).pos = planets(p).pos + ((planets(p).vel) .* precision);
+        planets(p).vel = planets(p).vel + ((planets(p).acc) * universe.precision);
+        planets(p).pos = planets(p).pos + ((planets(p).vel) .* universe.precision);
     end
 end
