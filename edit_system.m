@@ -13,7 +13,7 @@ function planets = edit_system(pls)
     
         % Prompt user for planet to edit
         edit_name = input(['Type the name of the planet to edit, or type ' ...
-            '"0" to save the new system: '],"s");
+            '"0" to save the new system:\n'],"s");
 
         % Stop editing if user types 0, and save the system
         if strcmp(edit_name, '0')
