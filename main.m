@@ -81,6 +81,8 @@ end
 %writematrix(x,'x-positions.csv');
 %writematrix(y,'y-positions.csv');
 
+fprintf('Animation starting; press any key to exit.\n')
+
 % Plot data
 plot(x,y)
 axis equal
@@ -97,3 +99,5 @@ for i = 1:universe.animation_speed:length(x)
     marker.YData = y(i,:);
     drawnow
 end
+
+fprintf('Animation exited at timestep %d\n', i);
