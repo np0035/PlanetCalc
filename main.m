@@ -83,6 +83,10 @@ end
 
 fprintf('Animation starting; press any key to exit.\n')
 
+% Dummy character to detect a key press
+set(gcf, 'CurrentCharacter', '}')
+
+figure(gcf);
 % Plot data
 plot(x,y)
 axis equal
@@ -90,7 +94,6 @@ hold on
 marker = plot(x(1,:),y(1,:), 'o','MarkerFaceColor','red');
 hold off
 
-set(gcf, 'CurrentCharacter', '}')
 for i = 1:universe.animation_speed:length(x)
     if get(gcf, 'CurrentCharacter') ~= ('}')
         break
