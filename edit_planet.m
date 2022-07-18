@@ -19,6 +19,13 @@ function planet = edit_planet(p)
     for i = 2:length(param_names)
         if params.(param_names{i}) == 0
             params.(param_names{i}) = p.(param_names{i});
+            continue
+        end
+
+        if (strcmp(param_names{i}, 'pos') || strcmp(param_names{i}, 'vel'))
+            [params.(param_names{i})(1), params.(param_names{i})(2)] ...
+            = pol2cart(deg2rad(params.(param_names{i})(1)), ...
+            params.(param_names{i})(2));
         end
     end
 
