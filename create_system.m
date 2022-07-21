@@ -29,6 +29,9 @@ function planets = create_system()
         vel = input('\nInitial velocity: ');
         mass = input('\nPlanet mass: ');
 
+        [pos(1), pos(2)] = pol2cart(deg2rad(pos(1)), pos(2));
+        [vel(1), vel(2)] = pol2cart(deg2rad(vel(1)), vel(2));
+
         num_planets = num_planets + 1;
 
         % Exit if planet cap is exceeded
