@@ -33,7 +33,7 @@ function planets = load_system()
                 planets = [];
                 return
             end
-            fprintf('\nInvalid system; please try again.')
+            fprintf('\nInvalid system; please try again.\n')
         end
     end
 end
