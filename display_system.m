@@ -8,6 +8,9 @@ function display_system(pls)
             [pol_vel(1), pol_vel(2)] = cart2pol(pls(i).vel(1), ...
                 pls(i).vel(2));
 
+            pol_pos(1) = rad2deg(pol_pos(1));
+            pol_vel(1) = rad2deg(pol_vel(1));
+
             fprintf('%s\n-------\n', pls(i).name);
 
             fprintf('Position:\n');
