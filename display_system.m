@@ -9,11 +9,11 @@ function display_system(pls)
 
             fprintf('%s\n-------\n', pls(i).name);
 
-            fprintf('Position: [%s]\n', num2str(pls(i).pos));
+            fprintf('Position:\n');
             fprintf('    Cartesian: [%s]\n', num2str(pls(i).pos));
             fprintf('    Polar: [%s]\n', num2str(pol_pos));
 
-            fprintf('Velocity: [%s]\n', num2str(pls(i).vel));
+            fprintf('Velocity:\n');
             fprintf('    Cartesian: [%s]\n', num2str(pls(i).vel));
             fprintf('    Polar: [%s]\n', num2str(pol_vel));
 
