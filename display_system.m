@@ -1,5 +1,6 @@
 function display_system(pls)
-    fprintf('Current system parameters:\n\n');
+    fprintf('Current System Parameters\n');
+    fprintf('-------------------------\n\n')
         for i = 1:length(pls)
             [pol_pos(1), pol_pos(2)] = cart2pol(pls(i).pos(1), ...
                 pls(i).pos(2));
