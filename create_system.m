@@ -11,8 +11,8 @@ function planets = create_system()
     % User instructions
     fprintf(['\nEnter data for each planet. Type "/" for the planet name' ...
         'to stop. %d planet maximum.'], planet_max);
-    fprintf(['\nInput positions and velocity values as a 2D vector in ' ...
-        'the format [x,y]']);
+    fprintf(['\nInput positions and velocity values as a polar vector in ' ...
+        'the format [theta,radius]']);
 
     % Not an infinite loop - planet cap is in place
     while (1)
@@ -28,6 +28,9 @@ function planets = create_system()
         pos = input('\nInitial position: ');
         vel = input('\nInitial velocity: ');
         mass = input('\nPlanet mass: ');
+
+        [pos(1), pos(2)] = pol2cart(deg2rad(pos(1)), pos(2));
+        [vel(1), vel(2)] = pol2cart(deg2rad(vel(1)), vel(2));
 
         num_planets = num_planets + 1;
 
