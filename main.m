@@ -92,6 +92,8 @@ figure(gcf);
 plot(x,y)
 set(gca, 'Color', 'k');
 axis equal
+lim = axis;
+axis(lim.*1.1)
 hold on
 marker = plot(x(1,:),y(1,:), 'o','MarkerFaceColor','red');
 hold off
