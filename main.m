@@ -89,6 +89,7 @@ set(gcf, 'CurrentCharacter', '}')
 figure(gcf);
 % Plot data
 plot(x,y)
+set(gca, 'Color', 'k');
 axis equal
 hold on
 marker = plot(x(1,:),y(1,:), 'o','MarkerFaceColor','red');
