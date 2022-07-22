@@ -17,6 +17,7 @@ fprintf('***************************************************\n\n')
 fprintf('Loading universe...\n');
 load('universe.mat')
 
+while (1)
 % Show main menu & collect user input
 isChoosing = true;
 while isChoosing
@@ -105,3 +106,5 @@ for i = 1:universe.animation_speed:length(x)
 end
 
 fprintf('Animation exited at timestep %d\n', i);
+
+end
