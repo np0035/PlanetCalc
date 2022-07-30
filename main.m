@@ -79,8 +79,8 @@ if length(planets) <= 1
 end
 
 % Export CSV files
-%writematrix(x,'x-positions.csv');
-%writematrix(y,'y-positions.csv');
+writematrix(x,'x-positions.csv');
+writematrix(y,'y-positions.csv');
 
 fprintf('Animation starting; press any key to exit.\n')
 
