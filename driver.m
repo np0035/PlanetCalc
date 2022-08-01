@@ -7,7 +7,11 @@ function result = driver(universe, planets)
 
     for i = 1:universe.steps
         % Simulate motion
-        planets_1 = step_runge_kutta_4(universe, planets_1);
+        if (universe.calc_method == 2)
+            planets_1 = step_runge_kutta_4(universe, planets_1);
+        else
+            planets_1 = step(universe, planets_1);
+        end
 
         % Add new position entry
         for j = 1:length(planets_1)
